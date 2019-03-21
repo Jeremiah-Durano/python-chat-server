@@ -2,12 +2,12 @@
 # Echo client program
 import socket
 
-HOST = '127'    # The remote host
-PORT = 20017  # The same port as used by the server
+HOST = '127.0.0.1'    # The remote host
+PORT = 50007          # The same port as used by the server
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((HOST, PORT))
-#data = s.recv(80000)
+data = s.recv(80000)
 
 print "please enter your username"
 name = raw_input()
@@ -17,6 +17,7 @@ print "----------------------"
 
 
 print "The Message log of: " + name + str(data)
+print "Enter <Commands> to see a list of commands"
 while 1:
   text = raw_input()
   s.sendall(name + ": " + "" + text)
