@@ -43,11 +43,11 @@ def commands():
 #Google Function
 def google(data):
     print "Google function"
-    googleStr = data.replace("","")
-    googleStr = googleStr.split(':', 1)[-1]
-    googleStr = googleStr.strip()
-    googleStr = googleStr.replace(" ","+")
-    url = "https://www.google.com/"
+    gStr = data.replace("","")
+    gStr = gStr.split(':', 1)[-1]
+    gStr = gStr.strip()
+    gStr = gStr.replace(" ","+")
+    url = "https://www.google.com/search?q=" + gStr
     webbrowser.open_new_tab(url)
 
 # sample parser function. The job of this function is to take some input
